@@ -1,0 +1,5 @@
+probe udp.sendmsg {
+	if ( dport == 53 ) {
+		printf ("PID %5d (%s) sent UDP to %15s 53\n", pid(), execname(), daddr)
+	}
+}
